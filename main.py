@@ -3,10 +3,8 @@ def csv_split(filename, user_specified_size):
     doc_name, extension = filename.split(".")[0], filename.split(".")[1]
     print(extension)
     """checking if file is an accepted fmt"""
-    # if extension not in any(accepted_fmt):
-    if extension != "csv":
+    if extension not in accepted_fmt:
         raise TypeError("Sorry input a an accepted format json or csv file")
-
     elif extension == "csv":
         size_of_file = os.path.getsize(filename)
         chunk_file_size = math.ceil(size_of_file / user_specified_size)
