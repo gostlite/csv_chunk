@@ -11,6 +11,6 @@ def csv_split(filename, user_specified_size):
         row_per_file = math.ceil(total_lenght_of_file / chunk_file_size)
         num = 1
         for each_file in pd.read_csv(filename, chunksize=row_per_file, header=None):
-            each_file.to_csv(f"{doc_name}{num}.csv")
+            each_file.to_csv(f"{doc_name}{num}.csv", index=False)
             num += 1
         return
